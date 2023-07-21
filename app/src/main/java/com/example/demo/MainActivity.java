@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         suhu.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                value1.setText(String.valueOf(snapshot.getValue(Long.class)));
+                value1.setText(String.valueOf(snapshot.getValue(Double.class)));
             }
 
             @Override
