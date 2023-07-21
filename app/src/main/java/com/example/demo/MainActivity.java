@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                value2.setText(String.valueOf(snapshot.getValue(Long.class)));
+                value2.setText(String.valueOf(snapshot.getValue(Double.class)));
             }
 
             @Override
