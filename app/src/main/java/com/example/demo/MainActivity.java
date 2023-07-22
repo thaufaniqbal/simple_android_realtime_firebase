@@ -11,7 +11,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         suhu.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                value1.setText(String.valueOf(snapshot.getValue(Double.class)));
+                value1.setText(String.valueOf(snapshot.getValue(Long.class)));
             }
 
             @Override
@@ -88,16 +87,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ShowPopup(View v) {
         TextView txtclose;
-        Button btnFollow;
         myDialog.setContentView(R.layout.popup);
         txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
         txtclose.setText("X");
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myDialog.dismiss();
-            }
-        });
+        txtclose.setOnClickListener(v1 -> myDialog.dismiss());
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
 
